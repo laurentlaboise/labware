@@ -1,1 +1,19 @@
-{\n  "name": "labware",\n  "private": true,\n  "workspaces": [\n    "packages/*",\n    "libs/*"\n  ],\n  "scripts": {\n    "build": "tsc -b",\n    "test": "jest"\n  },\n  "devDependencies": {\n    "typescript": "^4.5.0",\n    "jest": "^27.0.0"\n  },\n  "dependencies": {}\n}
+{
+  "name": "labware",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "dev:landing": "npm run dev --workspace=@labware/landing",
+    "build:landing": "npm run build --workspace=@labware/landing"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "jest": "^27.0.0"
+  },
+  "dependencies": {}
+}
