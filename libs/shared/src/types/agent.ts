@@ -1,6 +1,7 @@
 /**
  * Agent Profile Structure - 8 Layers
  * Following the "Dignity Through Utility" mission
+ * 64 specialized AI agents with farm animal cartoon avatars
  */
 
 export type AIModel =
@@ -31,6 +32,39 @@ export type AgentArchetype =
 
 export type AgentStatus = 'available' | 'processing' | 'escalation' | 'offline';
 
+/**
+ * Farm Animal Avatar Types
+ * Each agent is represented as a cute fat cartoon farm animal head
+ */
+export type FarmAnimalType =
+  | 'dog'
+  | 'bunny'
+  | 'tiger'
+  | 'cow'
+  | 'horse'
+  | 'pig'
+  | 'chicken'
+  | 'bull'
+  | 'duck'
+  | 'sheep'
+  | 'goat'
+  | 'cat'
+  | 'bear'
+  | 'fox'
+  | 'owl';
+
+/**
+ * Office Floor/Zone for the tycoon-style interface
+ */
+export type OfficeFloor = 'executive' | 'finance_tech' | 'marketing_ops' | 'specialists';
+
+export interface OfficePosition {
+  floor: OfficeFloor;
+  x: number; // 0-100 percentage of floor width
+  y: number; // 0-100 percentage of floor height
+  zone?: string; // e.g., 'desk-3', 'meeting-room-a', 'corner-office'
+}
+
 export interface AgentPersonality {
   mission: string;
   archetype: AgentArchetype;
@@ -46,7 +80,7 @@ export interface AgentPersonality {
 }
 
 export interface AgentProfile {
-  id: string; // Format: "agent_001" to "agent_064"
+  id: string; // Format: "001" to "064"
   name: string;
   role: string;
   department: string;
@@ -58,10 +92,10 @@ export interface AgentProfile {
   };
   n8n_tool_nodes: string[]; // Tools this agent can invoke
   visual: {
+    animal_type: FarmAnimalType; // Farm animal cartoon avatar
     color: string; // Hex color for department coding
-    icon: string; // Icon identifier
-    position: { x: number; y: number }; // Position in office view
-    floor: number; // Which floor of the building (1-5)
+    emoji: string; // Emoji representation
+    position: OfficePosition; // Position in the 2D office view
   };
   status: AgentStatus;
 }
