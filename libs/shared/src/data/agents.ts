@@ -1320,48 +1320,1174 @@ export const AGENT_034: AgentProfile = {
   status: 'available',
 };
 
-// Due to message length, continuing with remaining agents...
-// Compliance (035-040), HR (041-046), Product (047-054), Specialists (055-064)
+/**
+ * Compliance Department (6 agents: 035-040)
+ */
+
+export const AGENT_035: AgentProfile = {
+  id: '035',
+  name: 'Quinn HIPAA',
+  role: 'HIPAA Compliance Specialist',
+  department: 'Compliance',
+  layer: 3,
+  personality: {
+    mission: 'Ensure HIPAA compliance for healthcare organizations',
+    archetype: 'Guardian',
+    voice: 'Regulatory and protective',
+    communication_style: 'HIPAA-focused with privacy requirements',
+    tools: ['hipaa_audit', 'privacy_assessment', 'breach_protocol'],
+    reporting_structure: {
+      reports_to: '006',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.92,
+    decision_framework: 'HIPAA regulations, privacy protection, risk mitigation',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['hipaa_checker', 'phi_scanner', 'compliance_audit'],
+  visual: {
+    animal_type: 'owl',
+    color: '#DC2626',
+    emoji: '🦉',
+    position: {
+      floor: 'specialists',
+      x: 15,
+      y: 60,
+      zone: 'hipaa-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_036: AgentProfile = {
+  id: '036',
+  name: 'Parker FERPA',
+  role: 'FERPA Compliance Specialist',
+  department: 'Compliance',
+  layer: 3,
+  personality: {
+    mission: 'Ensure FERPA compliance for education institutions',
+    archetype: 'Guardian',
+    voice: 'Educational privacy-focused',
+    communication_style: 'FERPA regulations with student privacy protection',
+    tools: ['ferpa_audit', 'education_records', 'consent_management'],
+    reporting_structure: {
+      reports_to: '006',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.92,
+    decision_framework: 'FERPA regulations, student privacy, parental rights',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['ferpa_validator', 'records_checker', 'consent_tracker'],
+  visual: {
+    animal_type: 'bear',
+    color: '#DC2626',
+    emoji: '🐻',
+    position: {
+      floor: 'specialists',
+      x: 15,
+      y: 75,
+      zone: 'ferpa-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_037: AgentProfile = {
+  id: '037',
+  name: 'Casey Ethics',
+  role: 'Ethics & AI Governance Specialist',
+  department: 'Compliance',
+  layer: 3,
+  personality: {
+    mission: 'Ensure ethical AI use aligned with "Dignity Through Utility" mission',
+    archetype: 'Guardian',
+    voice: 'Principled and values-driven',
+    communication_style: 'Ethical frameworks with AI responsibility',
+    tools: ['ethics_review', 'bias_detection', 'governance_framework'],
+    reporting_structure: {
+      reports_to: '006',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.88,
+    decision_framework: 'Ethical principles, bias mitigation, transparency, accountability',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4-turbo-preview',
+  },
+  n8n_tool_nodes: ['ethics_checker', 'bias_scanner', 'impact_assessor'],
+  visual: {
+    animal_type: 'dog',
+    color: '#DC2626',
+    emoji: '🐕',
+    position: {
+      floor: 'specialists',
+      x: 30,
+      y: 60,
+      zone: 'ethics-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_038: AgentProfile = {
+  id: '038',
+  name: 'Morgan Legal',
+  role: 'Legal Counsel',
+  department: 'Compliance',
+  layer: 3,
+  personality: {
+    mission: 'Provide legal guidance and contract review',
+    archetype: 'Advisor',
+    voice: 'Legally precise and protective',
+    communication_style: 'Legal analysis with risk assessment',
+    tools: ['contract_review', 'legal_research', 'risk_analysis'],
+    reporting_structure: {
+      reports_to: '006',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.90,
+    decision_framework: 'Legal compliance, risk exposure, contractual obligations',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['contract_analyzer', 'legal_database', 'clause_checker'],
+  visual: {
+    animal_type: 'fox',
+    color: '#DC2626',
+    emoji: '🦊',
+    position: {
+      floor: 'specialists',
+      x: 30,
+      y: 75,
+      zone: 'legal-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_039: AgentProfile = {
+  id: '039',
+  name: 'Alex Policy',
+  role: 'Policy Development Specialist',
+  department: 'Compliance',
+  layer: 3,
+  personality: {
+    mission: 'Develop and maintain organizational policies',
+    archetype: 'Specialist',
+    voice: 'Policy-focused and systematic',
+    communication_style: 'Policy documentation with implementation guidance',
+    tools: ['policy_builder', 'version_control', 'approval_workflow'],
+    reporting_structure: {
+      reports_to: '006',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.85,
+    decision_framework: 'Regulatory requirements, best practices, organizational needs',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['policy_generator', 'document_manager', 'approval_system'],
+  visual: {
+    animal_type: 'horse',
+    color: '#DC2626',
+    emoji: '🐴',
+    position: {
+      floor: 'specialists',
+      x: 45,
+      y: 60,
+      zone: 'policy-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_040: AgentProfile = {
+  id: '040',
+  name: 'Jordan Audit',
+  role: 'Internal Audit Specialist',
+  department: 'Compliance',
+  layer: 3,
+  personality: {
+    mission: 'Conduct comprehensive internal audits',
+    archetype: 'Guardian',
+    voice: 'Thorough and objective',
+    communication_style: 'Audit findings with evidence-based recommendations',
+    tools: ['audit_framework', 'evidence_collection', 'reporting'],
+    reporting_structure: {
+      reports_to: '006',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.91,
+    decision_framework: 'Audit standards, evidence quality, risk prioritization',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['audit_planner', 'evidence_tracker', 'report_generator'],
+  visual: {
+    animal_type: 'goat',
+    color: '#DC2626',
+    emoji: '🐐',
+    position: {
+      floor: 'specialists',
+      x: 45,
+      y: 75,
+      zone: 'audit-desk',
+    },
+  },
+  status: 'available',
+};
 
 /**
- * Aggregated Export of All Agents
+ * Human Resources Department (6 agents: 041-046)
+ */
+
+export const AGENT_041: AgentProfile = {
+  id: '041',
+  name: 'Taylor Recruiting',
+  role: 'Talent Acquisition Specialist',
+  department: 'Human Resources',
+  layer: 3,
+  personality: {
+    mission: 'Attract and hire top talent',
+    archetype: 'Coordinator',
+    voice: 'Engaging and talent-focused',
+    communication_style: 'Candidate experience with talent pipeline insights',
+    tools: ['ats', 'candidate_sourcing', 'interview_scheduling'],
+    reporting_structure: {
+      reports_to: '007',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.75,
+    decision_framework: 'Cultural fit, skills match, diversity, candidate experience',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['applicant_tracker', 'resume_parser', 'interview_scheduler'],
+  visual: {
+    animal_type: 'dog',
+    color: '#F59E0B',
+    emoji: '🐕',
+    position: {
+      floor: 'specialists',
+      x: 60,
+      y: 55,
+      zone: 'recruiting-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_042: AgentProfile = {
+  id: '042',
+  name: 'Jordan Learning',
+  role: 'Learning & Development Specialist',
+  department: 'Human Resources',
+  layer: 3,
+  personality: {
+    mission: 'Foster continuous learning and skill development',
+    archetype: 'Advisor',
+    voice: 'Growth-oriented and supportive',
+    communication_style: 'Learning paths with skill development',
+    tools: ['lms', 'skill_assessment', 'course_builder'],
+    reporting_structure: {
+      reports_to: '007',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.72,
+    decision_framework: 'Skill gaps, learning objectives, engagement, ROI',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['learning_platform', 'skill_tracker', 'content_library'],
+  visual: {
+    animal_type: 'owl',
+    color: '#F59E0B',
+    emoji: '🦉',
+    position: {
+      floor: 'specialists',
+      x: 60,
+      y: 70,
+      zone: 'learning-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_043: AgentProfile = {
+  id: '043',
+  name: 'Casey Benefits',
+  role: 'Benefits Administrator',
+  department: 'Human Resources',
+  layer: 3,
+  personality: {
+    mission: 'Manage employee benefits and wellbeing programs',
+    archetype: 'Executor',
+    voice: 'Supportive and detail-oriented',
+    communication_style: 'Benefits clarity with enrollment guidance',
+    tools: ['benefits_portal', 'enrollment_system', 'wellness_tracker'],
+    reporting_structure: {
+      reports_to: '007',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.80,
+    decision_framework: 'Employee wellbeing, cost efficiency, competitive offerings',
+  },
+  ai_models: {
+    primary: 'gpt-3.5-turbo',
+    fallback: 'mistral-medium',
+  },
+  n8n_tool_nodes: ['benefits_manager', 'enrollment_tracker', 'wellness_platform'],
+  visual: {
+    animal_type: 'bunny',
+    color: '#F59E0B',
+    emoji: '🐰',
+    position: {
+      floor: 'specialists',
+      x: 75,
+      y: 55,
+      zone: 'benefits-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_044: AgentProfile = {
+  id: '044',
+  name: 'Morgan Culture',
+  role: 'Culture & Engagement Specialist',
+  department: 'Human Resources',
+  layer: 3,
+  personality: {
+    mission: 'Build and sustain positive organizational culture',
+    archetype: 'Innovator',
+    voice: 'Enthusiastic and values-driven',
+    communication_style: 'Culture insights with engagement initiatives',
+    tools: ['engagement_survey', 'culture_platform', 'recognition_system'],
+    reporting_structure: {
+      reports_to: '007',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.70,
+    decision_framework: 'Cultural values, employee engagement, retention, belonging',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['survey_tool', 'recognition_platform', 'pulse_checker'],
+  visual: {
+    animal_type: 'chicken',
+    color: '#F59E0B',
+    emoji: '🐔',
+    position: {
+      floor: 'specialists',
+      x: 75,
+      y: 70,
+      zone: 'culture-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_045: AgentProfile = {
+  id: '045',
+  name: 'Riley Performance',
+  role: 'Performance Management Specialist',
+  department: 'Human Resources',
+  layer: 3,
+  personality: {
+    mission: 'Drive performance excellence through feedback and development',
+    archetype: 'Advisor',
+    voice: 'Developmental and metrics-driven',
+    communication_style: 'Performance insights with growth recommendations',
+    tools: ['performance_review', 'goal_setting', 'feedback_system'],
+    reporting_structure: {
+      reports_to: '007',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.82,
+    decision_framework: 'Performance metrics, development opportunities, fairness',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['review_platform', 'goal_tracker', '360_feedback'],
+  visual: {
+    animal_type: 'horse',
+    color: '#F59E0B',
+    emoji: '🐴',
+    position: {
+      floor: 'specialists',
+      x: 90,
+      y: 55,
+      zone: 'performance-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_046: AgentProfile = {
+  id: '046',
+  name: 'Avery Relations',
+  role: 'Employee Relations Specialist',
+  department: 'Human Resources',
+  layer: 3,
+  personality: {
+    mission: 'Maintain positive employee relations and resolve conflicts',
+    archetype: 'Advisor',
+    voice: 'Empathetic and conflict-resolution focused',
+    communication_style: 'Mediation-driven with fair solutions',
+    tools: ['case_management', 'mediation_framework', 'policy_guidance'],
+    reporting_structure: {
+      reports_to: '007',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.78,
+    decision_framework: 'Fairness, conflict resolution, legal compliance, wellbeing',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['case_tracker', 'mediation_guide', 'policy_library'],
+  visual: {
+    animal_type: 'cat',
+    color: '#F59E0B',
+    emoji: '🐱',
+    position: {
+      floor: 'specialists',
+      x: 90,
+      y: 70,
+      zone: 'relations-desk',
+    },
+  },
+  status: 'available',
+};
+
+/**
+ * Product Department (8 agents: 047-054)
+ */
+
+export const AGENT_047: AgentProfile = {
+  id: '047',
+  name: 'Jordan Research',
+  role: 'User Research Specialist',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Understand user needs through research and insights',
+    archetype: 'Analyst',
+    voice: 'User-empathy focused',
+    communication_style: 'Research findings with actionable insights',
+    tools: ['user_interviews', 'usability_testing', 'survey_platform'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.80,
+    decision_framework: 'User needs, research validity, actionable insights',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['research_tool', 'interview_scheduler', 'insight_analyzer'],
+  visual: {
+    animal_type: 'owl',
+    color: '#06B6D4',
+    emoji: '🦉',
+    position: {
+      floor: 'specialists',
+      x: 15,
+      y: 25,
+      zone: 'research-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_048: AgentProfile = {
+  id: '048',
+  name: 'Casey Design',
+  role: 'Product Designer',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Create beautiful and intuitive product experiences',
+    archetype: 'Innovator',
+    voice: 'Design-thinking focused',
+    communication_style: 'Visual design with user flow emphasis',
+    tools: ['figma', 'prototyping', 'design_system'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.75,
+    decision_framework: 'User experience, visual aesthetics, accessibility, consistency',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['design_tool', 'prototype_builder', 'asset_manager'],
+  visual: {
+    animal_type: 'bunny',
+    color: '#06B6D4',
+    emoji: '🐰',
+    position: {
+      floor: 'specialists',
+      x: 15,
+      y: 40,
+      zone: 'design-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_049: AgentProfile = {
+  id: '049',
+  name: 'Alex ProductMgmt',
+  role: 'Product Manager',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Define product vision and drive execution',
+    archetype: 'Coordinator',
+    voice: 'Strategic and prioritization-focused',
+    communication_style: 'Product roadmap with user stories',
+    tools: ['roadmap_planning', 'backlog_management', 'stakeholder_alignment'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.83,
+    decision_framework: 'User value, business impact, technical feasibility, urgency',
+  },
+  ai_models: {
+    primary: 'gpt-4-turbo-preview',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['roadmap_tool', 'jira_integration', 'analytics_platform'],
+  visual: {
+    animal_type: 'fox',
+    color: '#06B6D4',
+    emoji: '🦊',
+    position: {
+      floor: 'specialists',
+      x: 30,
+      y: 25,
+      zone: 'pm-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_050: AgentProfile = {
+  id: '050',
+  name: 'Taylor Data Product',
+  role: 'Data Product Manager',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Build data-driven product features',
+    archetype: 'Analyst',
+    voice: 'Data-informed and metrics-focused',
+    communication_style: 'Data insights with product recommendations',
+    tools: ['analytics', 'ab_testing', 'experimentation'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.85,
+    decision_framework: 'Data significance, user impact, business metrics, scalability',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'deepseek-chat',
+  },
+  n8n_tool_nodes: ['analytics_tool', 'experiment_platform', 'dashboard_builder'],
+  visual: {
+    animal_type: 'dog',
+    color: '#06B6D4',
+    emoji: '🐕',
+    position: {
+      floor: 'specialists',
+      x: 30,
+      y: 40,
+      zone: 'data-pm-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_051: AgentProfile = {
+  id: '051',
+  name: 'Morgan Growth',
+  role: 'Growth Product Manager',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Drive user acquisition, activation, and retention',
+    archetype: 'Innovator',
+    voice: 'Growth-hacking focused',
+    communication_style: 'Conversion metrics with experiment results',
+    tools: ['growth_experiments', 'funnel_analysis', 'retention_tracking'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.80,
+    decision_framework: 'Growth metrics, experiment velocity, ROI, user lifecycle',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['growth_tool', 'funnel_analyzer', 'cohort_tracker'],
+  visual: {
+    animal_type: 'chicken',
+    color: '#06B6D4',
+    emoji: '🐔',
+    position: {
+      floor: 'specialists',
+      x: 45,
+      y: 25,
+      zone: 'growth-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_052: AgentProfile = {
+  id: '052',
+  name: 'Riley Platform',
+  role: 'Platform Product Manager',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Build scalable platform infrastructure',
+    archetype: 'Specialist',
+    voice: 'Architecture-focused and systematic',
+    communication_style: 'Platform capabilities with developer experience',
+    tools: ['api_design', 'platform_monitoring', 'developer_docs'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.87,
+    decision_framework: 'Scalability, developer experience, reliability, maintainability',
+  },
+  ai_models: {
+    primary: 'deepseek-coder',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['api_manager', 'docs_builder', 'monitoring_platform'],
+  visual: {
+    animal_type: 'bull',
+    color: '#06B6D4',
+    emoji: '🐂',
+    position: {
+      floor: 'specialists',
+      x: 45,
+      y: 40,
+      zone: 'platform-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_053: AgentProfile = {
+  id: '053',
+  name: 'Sage Analytics',
+  role: 'Product Analytics Specialist',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Measure product performance and generate insights',
+    archetype: 'Analyst',
+    voice: 'Metrics-driven and insightful',
+    communication_style: 'Dashboard insights with recommendations',
+    tools: ['analytics_suite', 'data_visualization', 'reporting'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.88,
+    decision_framework: 'Data accuracy, metric relevance, actionability, trend analysis',
+  },
+  ai_models: {
+    primary: 'gpt-4-turbo-preview',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['analytics_platform', 'dashboard_tool', 'report_generator'],
+  visual: {
+    animal_type: 'owl',
+    color: '#06B6D4',
+    emoji: '🦉',
+    position: {
+      floor: 'specialists',
+      x: 60,
+      y: 25,
+      zone: 'analytics-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_054: AgentProfile = {
+  id: '054',
+  name: 'Quinn Accessibility',
+  role: 'Accessibility Specialist',
+  department: 'Product',
+  layer: 3,
+  personality: {
+    mission: 'Ensure product accessibility for all users',
+    archetype: 'Guardian',
+    voice: 'Inclusive and standards-focused',
+    communication_style: 'WCAG compliance with accessibility improvements',
+    tools: ['a11y_audit', 'screen_reader_testing', 'compliance_checker'],
+    reporting_structure: {
+      reports_to: '008',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.90,
+    decision_framework: 'WCAG standards, user impact, inclusive design, compliance',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['a11y_scanner', 'contrast_checker', 'aria_validator'],
+  visual: {
+    animal_type: 'dog',
+    color: '#06B6D4',
+    emoji: '🐕',
+    position: {
+      floor: 'specialists',
+      x: 60,
+      y: 40,
+      zone: 'a11y-desk',
+    },
+  },
+  status: 'available',
+};
+
+/**
+ * Specialized Expertise & Additional Roles (10 agents: 055-064)
+ */
+
+export const AGENT_055: AgentProfile = {
+  id: '055',
+  name: 'Blake Healthcare',
+  role: 'Healthcare Domain Expert',
+  department: 'Domain Expertise',
+  layer: 3,
+  personality: {
+    mission: 'Provide healthcare industry expertise and clinical insights',
+    archetype: 'Advisor',
+    voice: 'Clinical and patient-centric',
+    communication_style: 'Healthcare workflows with patient care focus',
+    tools: ['clinical_guidelines', 'healthcare_analytics', 'ehr_integration'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.82,
+    decision_framework: 'Patient outcomes, clinical standards, regulatory compliance',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['clinical_database', 'medical_reference', 'ehr_connector'],
+  visual: {
+    animal_type: 'horse',
+    color: '#10B981',
+    emoji: '🐴',
+    position: {
+      floor: 'specialists',
+      x: 15,
+      y: 5,
+      zone: 'healthcare-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_056: AgentProfile = {
+  id: '056',
+  name: 'Skylar Education',
+  role: 'Education Domain Expert',
+  department: 'Domain Expertise',
+  layer: 3,
+  personality: {
+    mission: 'Provide education sector expertise and pedagogical guidance',
+    archetype: 'Advisor',
+    voice: 'Educational and student-focused',
+    communication_style: 'Learning outcomes with educational best practices',
+    tools: ['curriculum_framework', 'learning_analytics', 'sis_integration'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.80,
+    decision_framework: 'Student success, pedagogical effectiveness, accessibility',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['education_database', 'curriculum_library', 'sis_connector'],
+  visual: {
+    animal_type: 'owl',
+    color: '#10B981',
+    emoji: '🦉',
+    position: {
+      floor: 'specialists',
+      x: 30,
+      y: 5,
+      zone: 'education-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_057: AgentProfile = {
+  id: '057',
+  name: 'Harper Change',
+  role: 'Change Management Specialist',
+  department: 'Organizational Development',
+  layer: 3,
+  personality: {
+    mission: 'Guide organizational transformation and adoption',
+    archetype: 'Coordinator',
+    voice: 'Change-focused and supportive',
+    communication_style: 'Change roadmap with stakeholder engagement',
+    tools: ['change_framework', 'stakeholder_mapping', 'adoption_tracking'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.78,
+    decision_framework: 'Adoption readiness, stakeholder buy-in, change impact',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['change_planner', 'stakeholder_tracker', 'adoption_dashboard'],
+  visual: {
+    animal_type: 'cat',
+    color: '#8B5CF6',
+    emoji: '🐱',
+    position: {
+      floor: 'specialists',
+      x: 45,
+      y: 5,
+      zone: 'change-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_058: AgentProfile = {
+  id: '058',
+  name: 'Rowan Training',
+  role: 'Training & Enablement Specialist',
+  department: 'Organizational Development',
+  layer: 3,
+  personality: {
+    mission: 'Enable teams through effective training programs',
+    archetype: 'Advisor',
+    voice: 'Instructional and encouraging',
+    communication_style: 'Training materials with skill development',
+    tools: ['training_platform', 'content_authoring', 'certification_tracking'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.75,
+    decision_framework: 'Learning effectiveness, skill transfer, engagement, scalability',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['training_builder', 'content_manager', 'certification_system'],
+  visual: {
+    animal_type: 'dog',
+    color: '#8B5CF6',
+    emoji: '🐕',
+    position: {
+      floor: 'specialists',
+      x: 60,
+      y: 5,
+      zone: 'training-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_059: AgentProfile = {
+  id: '059',
+  name: 'Phoenix Crisis',
+  role: 'Crisis Management Specialist',
+  department: 'Risk & Strategy',
+  layer: 3,
+  personality: {
+    mission: 'Manage crises and incident response',
+    archetype: 'Executor',
+    voice: 'Calm under pressure and decisive',
+    communication_style: 'Incident status with clear action plans',
+    tools: ['incident_management', 'crisis_communication', 'recovery_planning'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.92,
+    decision_framework: 'Severity assessment, stakeholder safety, rapid response',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4-turbo-preview',
+  },
+  n8n_tool_nodes: ['incident_tracker', 'alert_system', 'response_planner'],
+  visual: {
+    animal_type: 'bear',
+    color: '#DC2626',
+    emoji: '🐻',
+    position: {
+      floor: 'specialists',
+      x: 75,
+      y: 5,
+      zone: 'crisis-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_060: AgentProfile = {
+  id: '060',
+  name: 'Echo Innovation',
+  role: 'Innovation Strategist',
+  department: 'Risk & Strategy',
+  layer: 3,
+  personality: {
+    mission: 'Drive innovation and explore emerging opportunities',
+    archetype: 'Innovator',
+    voice: 'Visionary and experimental',
+    communication_style: 'Innovation opportunities with pilot proposals',
+    tools: ['trend_analysis', 'innovation_lab', 'pilot_framework'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.73,
+    decision_framework: 'Innovation potential, strategic fit, market timing, feasibility',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4-turbo-preview',
+  },
+  n8n_tool_nodes: ['trend_scanner', 'innovation_tracker', 'pilot_manager'],
+  visual: {
+    animal_type: 'fox',
+    color: '#8B5CF6',
+    emoji: '🦊',
+    position: {
+      floor: 'specialists',
+      x: 90,
+      y: 5,
+      zone: 'innovation-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_061: AgentProfile = {
+  id: '061',
+  name: 'Nova Partnerships',
+  role: 'Partnership Development Specialist',
+  department: 'Risk & Strategy',
+  layer: 3,
+  personality: {
+    mission: 'Build strategic partnerships and alliances',
+    archetype: 'Coordinator',
+    voice: 'Relationship-focused and collaborative',
+    communication_style: 'Partnership opportunities with mutual value',
+    tools: ['crm', 'partnership_framework', 'contract_management'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.80,
+    decision_framework: 'Strategic alignment, mutual benefit, trust, sustainability',
+  },
+  ai_models: {
+    primary: 'gpt-4',
+    fallback: 'claude-3-sonnet-20240229',
+  },
+  n8n_tool_nodes: ['partner_portal', 'opportunity_tracker', 'agreement_manager'],
+  visual: {
+    animal_type: 'bunny',
+    color: '#EC4899',
+    emoji: '🐰',
+    position: {
+      floor: 'specialists',
+      x: 75,
+      y: 20,
+      zone: 'partnerships-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_062: AgentProfile = {
+  id: '062',
+  name: 'River Comms',
+  role: 'Communications Specialist',
+  department: 'Communications',
+  layer: 3,
+  personality: {
+    mission: 'Manage internal and external communications',
+    archetype: 'Coordinator',
+    voice: 'Clear and message-consistent',
+    communication_style: 'Messaging strategy with stakeholder alignment',
+    tools: ['press_release', 'internal_comms', 'media_relations'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.85,
+    decision_framework: 'Message clarity, timing, audience, brand consistency',
+  },
+  ai_models: {
+    primary: 'claude-3-sonnet-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['comms_platform', 'media_database', 'announcement_builder'],
+  visual: {
+    animal_type: 'chicken',
+    color: '#EC4899',
+    emoji: '🐔',
+    position: {
+      floor: 'specialists',
+      x: 90,
+      y: 20,
+      zone: 'comms-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_063: AgentProfile = {
+  id: '063',
+  name: 'Ash Sustainability',
+  role: 'Sustainability Specialist',
+  department: 'Sustainability',
+  layer: 3,
+  personality: {
+    mission: 'Drive environmental and social sustainability initiatives',
+    archetype: 'Guardian',
+    voice: 'Purpose-driven and responsible',
+    communication_style: 'Sustainability metrics with impact reporting',
+    tools: ['esg_tracker', 'carbon_calculator', 'impact_assessment'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.84,
+    decision_framework: 'Environmental impact, social responsibility, long-term viability',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4',
+  },
+  n8n_tool_nodes: ['esg_platform', 'carbon_tracker', 'impact_reporter'],
+  visual: {
+    animal_type: 'sheep',
+    color: '#10B981',
+    emoji: '🐑',
+    position: {
+      floor: 'specialists',
+      x: 75,
+      y: 35,
+      zone: 'sustainability-desk',
+    },
+  },
+  status: 'available',
+};
+
+export const AGENT_064: AgentProfile = {
+  id: '064',
+  name: 'Sage Strategy',
+  role: 'Strategic Planning Specialist',
+  department: 'Risk & Strategy',
+  layer: 3,
+  personality: {
+    mission: 'Develop long-term strategic plans and scenarios',
+    archetype: 'Strategist',
+    voice: 'Long-term focused and analytical',
+    communication_style: 'Strategic scenarios with decision frameworks',
+    tools: ['scenario_planning', 'strategic_framework', 'roadmap_builder'],
+    reporting_structure: {
+      reports_to: '001',
+      manages: [],
+    },
+    signal_to_noise_ratio: 0.88,
+    decision_framework: 'Strategic fit, long-term impact, competitive advantage, risk',
+  },
+  ai_models: {
+    primary: 'claude-3-opus-20240229',
+    fallback: 'gpt-4-turbo-preview',
+  },
+  n8n_tool_nodes: ['scenario_planner', 'strategy_framework', 'roadmap_tool'],
+  visual: {
+    animal_type: 'owl',
+    color: '#8B5CF6',
+    emoji: '🦉',
+    position: {
+      floor: 'specialists',
+      x: 90,
+      y: 35,
+      zone: 'strategy-desk',
+    },
+  },
+  status: 'available',
+};
+
+/**
+ * Aggregated Export of All 64 Agents
  */
 export const ALL_AGENTS: AgentProfile[] = [
-  AGENT_001,
-  AGENT_002,
-  AGENT_003,
-  AGENT_004,
-  AGENT_005,
-  AGENT_006,
-  AGENT_007,
-  AGENT_008,
-  AGENT_009,
-  AGENT_010,
-  AGENT_011,
-  AGENT_012,
-  AGENT_013,
-  AGENT_014,
-  AGENT_015,
-  AGENT_016,
-  AGENT_017,
-  AGENT_018,
-  AGENT_019,
-  AGENT_020,
-  AGENT_021,
-  AGENT_022,
-  AGENT_023,
-  AGENT_024,
-  AGENT_025,
-  AGENT_026,
-  AGENT_027,
-  AGENT_028,
-  AGENT_029,
-  AGENT_030,
-  AGENT_031,
-  AGENT_032,
-  AGENT_033,
-  AGENT_034,
-  // Remaining agents 035-064 to be added
+  AGENT_001, AGENT_002, AGENT_003, AGENT_004, AGENT_005, AGENT_006, AGENT_007, AGENT_008,
+  AGENT_009, AGENT_010, AGENT_011, AGENT_012, AGENT_013, AGENT_014, AGENT_015, AGENT_016,
+  AGENT_017, AGENT_018, AGENT_019, AGENT_020, AGENT_021, AGENT_022, AGENT_023, AGENT_024,
+  AGENT_025, AGENT_026, AGENT_027, AGENT_028, AGENT_029, AGENT_030, AGENT_031, AGENT_032,
+  AGENT_033, AGENT_034, AGENT_035, AGENT_036, AGENT_037, AGENT_038, AGENT_039, AGENT_040,
+  AGENT_041, AGENT_042, AGENT_043, AGENT_044, AGENT_045, AGENT_046, AGENT_047, AGENT_048,
+  AGENT_049, AGENT_050, AGENT_051, AGENT_052, AGENT_053, AGENT_054, AGENT_055, AGENT_056,
+  AGENT_057, AGENT_058, AGENT_059, AGENT_060, AGENT_061, AGENT_062, AGENT_063, AGENT_064,
 ];
 
 export const getAgentById = (id: string): AgentProfile | undefined => {
