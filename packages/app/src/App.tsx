@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { OfficeView } from './components/OfficeView';
 import { ChatPanel } from './components/ChatPanel';
 import { TeamViewModal } from './components/TeamViewModal';
-import type { AgentProfile } from '@labware/shared/src/types/agent';
+import type { AgentProfile } from '@labware/shared';
 
 interface AppHeaderProps {
   onTeamViewClick: () => void;

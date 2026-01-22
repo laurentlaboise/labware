@@ -5,8 +5,8 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ALL_AGENTS } from '@labware/shared/src/data/agents';
-import type { AgentProfile } from '@labware/shared/src/types/agent';
+import { ALL_AGENTS } from '@labware/shared';
+import type { AgentProfile } from '@labware/shared';
 import { AnimalAvatar } from './AnimalAvatar';
 
 interface TeamViewModalProps {
