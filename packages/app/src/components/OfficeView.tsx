@@ -7,6 +7,8 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ALL_AGENTS, getAgentsByFloor } from '@labware/shared/src/data/agents';
 import type { AgentProfile } from '@labware/shared/src/types/agent';
+import { AnimalAvatar } from './AnimalAvatar';
+import { OfficeFurniture } from './OfficeFurniture';
 
 interface OfficeViewProps {
   onAgentClick: (agent: AgentProfile) => void;
@@ -247,8 +249,53 @@ export const OfficeView: React.FC<OfficeViewProps> = ({ onAgentClick }) => {
 
                   {/* Floor Content - Agent Grid */}
                   <div className="relative p-8 min-h-[400px]">
+                    {/* Office Furniture Decorations */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      {/* Scattered furniture based on floor type */}
+                      {floor.id === 'executive' && (
+                        <>
+                          <div className="absolute top-4 left-4 w-20 h-16">
+                            <OfficeFurniture type="meeting-table" />
+                          </div>
+                          <div className="absolute top-4 right-4 w-12 h-16">
+                            <OfficeFurniture type="plant" />
+                          </div>
+                        </>
+                      )}
+                      {floor.id === 'finance_tech' && (
+                        <>
+                          <div className="absolute bottom-4 left-8 w-12 h-20">
+                            <OfficeFurniture type="filing-cabinet" />
+                          </div>
+                          <div className="absolute top-4 right-8 w-16 h-16">
+                            <OfficeFurniture type="coffee-station" />
+                          </div>
+                        </>
+                      )}
+                      {floor.id === 'marketing_ops' && (
+                        <>
+                          <div className="absolute top-4 left-8 w-12 h-16">
+                            <OfficeFurniture type="plant" />
+                          </div>
+                          <div className="absolute bottom-4 right-8 w-10 h-20">
+                            <OfficeFurniture type="water-cooler" />
+                          </div>
+                        </>
+                      )}
+                      {floor.id === 'specialists' && (
+                        <>
+                          <div className="absolute top-4 left-4 w-12 h-20">
+                            <OfficeFurniture type="filing-cabinet" />
+                          </div>
+                          <div className="absolute top-4 right-4 w-12 h-16">
+                            <OfficeFurniture type="plant" />
+                          </div>
+                        </>
+                      )}
+                    </div>
+
                     {/* Grid layout for agents */}
-                    <div className="grid grid-cols-8 gap-6">
+                    <div className="grid grid-cols-8 gap-6 relative z-10">
                       {floor.agents.map((agent) => (
                         <motion.div
                           key={agent.id}
@@ -265,20 +312,14 @@ export const OfficeView: React.FC<OfficeViewProps> = ({ onAgentClick }) => {
                           }}
                         >
                           {/* Agent Character */}
-                          <div className="relative">
-                            {/* Agent Avatar */}
-                            <div
-                              className="w-20 h-20 rounded-full flex items-center justify-center text-5xl bg-white shadow-lg group-hover:shadow-2xl transition-all duration-200"
-                              style={{ borderColor: agent.visual.color }}
-                            >
-                              {agent.visual.emoji}
-                            </div>
-
-                            {/* Status Indicator */}
-                            <div
-                              className={`absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${getStatusColor(
-                                agent.status
-                              )}`}
+                          <div className="relative flex flex-col items-center">
+                            {/* Agent Avatar with SVG cartoon */}
+                            <AnimalAvatar
+                              animal={agent.visual.animal_type}
+                              size={80}
+                              color={agent.visual.color}
+                              status={agent.status}
+                              className="group-hover:scale-110 transition-transform duration-200"
                             />
 
                             {/* Agent Name Label */}

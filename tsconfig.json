@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "esnext",
+    "lib": ["ES2020"],
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "composite": true
+  },
+  "references": [
+    { "path": "./libs/shared" },
+    { "path": "./libs/ui" }
+  ],
+  "exclude": ["node_modules", "dist", ".next", "out"]
+}
