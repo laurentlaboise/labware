@@ -5,7 +5,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { AgentProfile } from '@labware/shared/src/types/agent';
+import type { AgentProfile } from '@labware/shared';
 
 interface Message {
   id: string;

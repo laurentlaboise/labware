@@ -5,8 +5,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ALL_AGENTS, getAgentsByFloor } from '@labware/shared/src/data/agents';
-import type { AgentProfile } from '@labware/shared/src/types/agent';
+import { ALL_AGENTS, getAgentsByFloor, type AgentProfile } from '@labware/shared';
 import { AnimalAvatar } from './AnimalAvatar';
 import { OfficeFurniture } from './OfficeFurniture';
 
